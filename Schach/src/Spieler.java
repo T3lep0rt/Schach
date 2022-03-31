@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Spieler {
 
@@ -11,6 +12,7 @@ public class Spieler {
 	public int[] turnInput() {
 		boolean zulaessigeEingabe = false;
 		int[] arr = new int[4];
+		Scanner s = new Scanner(System.in);
 
 		// Schleife zur Wiederholung der Eingabeaufforderung bei falschem Format.
 		while (!zulaessigeEingabe) {
