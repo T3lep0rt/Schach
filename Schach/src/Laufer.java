@@ -10,5 +10,14 @@ public class Laufer extends Figur{
 		}
 		return 'L';
 	}
+	@Override
+	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW) {
+		// check if bishop movement is possible 
+		if(newX-prevX == newY-prevY) {
+			return true;
+		}else{
+			return false;
+		}
+	}
 	
 }

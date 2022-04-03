@@ -2,17 +2,31 @@ import java.util.Scanner;
 
 public class Spieler {
 
-	
-	public void Zug() {
-		
-		turnInput();
-		
+	Scanner s = new Scanner(System.in);
+	Zug zug;
+	ZugHandler zugHandler = new ZugHandler();
+
+	public Figur[][] ziehen(Figur[][] brett) {
+
+	//wiederholen bis möglich
+		while (true){
+			int[] input = turnInput();
+			if(zugHandler.istZugMöglich(input[0], input[1], input[2], input[3], brett,true)) {
+				brett = zugHandler.ziehen(input[0], input[1], input[2], input[3], brett);
+				break;
+			}else{
+				System.out.println("Zug nicht möglich");
+			}
+			
+		}
+		return brett;
+
+
 	}
-	
+
 	public int[] turnInput() {
 		boolean zulaessigeEingabe = false;
 		int[] arr = new int[4];
-		Scanner s = new Scanner(System.in);
 
 		// Schleife zur Wiederholung der Eingabeaufforderung bei falschem Format.
 		while (!zulaessigeEingabe) {
@@ -40,4 +54,5 @@ public class Spieler {
 		}
 		return arr;
 	}
+
 }

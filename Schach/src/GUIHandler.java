@@ -6,10 +6,10 @@ public class GUIHandler implements GUI{
 			System.out.println();
 			System.out.print(i + 1 + "   ");
 			for (int j = 0; j < 8; j++) {
-				if (brett[i][j] == null) {
+				if (brett[j][i] == null) {
 					System.out.print("\u25a1\u2009 ");
 				} else {
-					System.out.print(brett[i][j].getUni()+"  ");
+					System.out.print(brett[j][i].getUni()+"  ");
 				}
 			}
 		}

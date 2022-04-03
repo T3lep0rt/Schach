@@ -17,5 +17,11 @@ public class Figur {
 	public char getUni() {
 		return unicode;
 	}
+	public boolean getisW() {
+		return isW;
+	}
+	public boolean test(int prevX, int prevY,int newX,int newY,boolean isW) {
+		return false;
+	}
 	
 }
