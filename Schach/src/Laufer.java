@@ -13,7 +13,7 @@ public class Laufer extends Figur{
 	@Override
 	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW) {
 		// check if bishop movement is possible 
-		if(newX-prevX == newY-prevY) {
+		if(Math.abs(newY-prevX) == Math.abs(newY-prevY)) {
 			return true;
 		}else{
 			return false;

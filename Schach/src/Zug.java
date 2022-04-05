@@ -13,7 +13,9 @@ public class Zug {
 
     @Override
     public String toString() {
-        return "current x:"+currX+"\n current y:"+currY+"\n new x:"+newX+"\n new y:"+newY;
+        // BSP: A 8 --> B 7
+    	//Make String
+    	return  ""+String.valueOf((char)(currX + 65))+""+(currY+1)+" --> "+String.valueOf((char)(newX + 65))+""+(newY+1);
     }
 
     public int getCurrX() {

@@ -17,7 +17,7 @@ public class Dame extends Figur {
 	@Override
 	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW) {
 		// check if queen movement is possible
-		if(newX-prevX == newY-prevY) {
+		if(Math.abs(newY-prevX) == Math.abs(newY-prevY)) {
 			return true;
 		}else if (newX == prevX && newY > prevY) {
 			return true;

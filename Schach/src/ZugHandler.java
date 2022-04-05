@@ -1,10 +1,15 @@
+import java.util.ArrayList;
+
 public class ZugHandler {
 
-	
-	
+	ArrayList<Zug> zugListe = new ArrayList<Zug>();
+
 	public ZugHandler() {
 		
-		
+	}
+	
+	public ArrayList<Zug> getZug(){
+		return zugListe;
 	}
 
 	public Figur[][] ziehen(int prevX, int prevY,int newX,int newY,Figur[][] brett){
@@ -35,6 +40,9 @@ public class ZugHandler {
 					return false;
 				}
 			}
+			
+			zugListe.add(new Zug(prevX,prevY,newX,newY));
+			//debug shit: System.out.println(zugListe.get(0).toString());
 			return true;
 		}else return false;
 
