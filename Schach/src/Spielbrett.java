@@ -1,7 +1,7 @@
 public class Spielbrett {
 
 	Figur[][] brett = new Figur[8][8];
-	GUIHandler guiHandler = new GUIHandler();
+	GUIKonsole guiHandler = new GUIKonsole();
 
 	public void Init() {
 		// TODO Auto-generated method stub
