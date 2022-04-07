@@ -32,6 +32,7 @@ public class GUI2D extends JFrame implements ActionListener, GUI {
 		frame.setTitle("Schach von Sandro!");
 		frame.setIconImage(img.getImage());
 		frame.setSize(605, 488);
+		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
 

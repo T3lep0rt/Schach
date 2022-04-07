@@ -13,16 +13,25 @@ public class ZugHandler {
 
 		// führt zug aus
 
+		
+
 		if (brett[newX][newY] != null) { // wenn an der neuen stelle eine andere figur steht überschreibe sie
 			brett[newX][newY] = null;
 		}
 		if (newY == 0 && brett[prevX][prevY].isW && brett[prevX][prevY] instanceof Bauer) { //Bauer zu Dame wenn am ende
 			brett[prevX][prevY] = null;
-			brett[newX][newY] = new Dame(true);
+			Popup gui = new Popup();
+			brett[newX][newY] = gui.makeDecision();
 		} else if (newY == 7 && !brett[prevX][prevY].isW && brett[prevX][prevY] instanceof Bauer) {
 			brett[prevX][prevY] = null;
+			//pc wählt zufällig was er möchte
 			brett[newX][newY] = new Dame(false);
-		} else {
+		} 
+		//else if(brett[newX-1][newY+1] != null){
+		//	brett[newX][newY] = brett[prevX][prevY];
+		//	brett[newX-1][newY+1] = null;
+		//}
+		else {
 			Figur temp = brett[prevX][prevY];
 			brett[prevX][prevY] = brett[newX][newY];
 			brett[newX][newY] = temp;

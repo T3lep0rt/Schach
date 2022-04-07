@@ -27,6 +27,8 @@ public class Spiel  {
 			schach = spielbrett.isSchach();  //überprüfe auf schach
 			if(schach) {   //wenn schach true gebe aus wer gewinnt 
 				System.out.println("gewonnen hat der spieler");
+				Popup popup = new Popup();
+				popup.gewonnen("Der Spieler");
 				break;
 			}
 			System.out.println("Spieler ist fertig");
@@ -34,6 +36,8 @@ public class Spiel  {
 			schach = spielbrett.isSchach();
 			if(schach) {
 				System.out.println("gewonnen hat der computer");
+				Popup popup = new Popup();
+				popup.gewonnen("Der Computer");
 			}
 		}
 
