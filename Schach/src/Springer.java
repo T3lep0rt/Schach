@@ -6,12 +6,12 @@ public class Springer extends Figur{
 	
 	public char getUni() {
 		if(isW) {
-			return 's';
+			return '♘';
 		}
-		return 'S';
+		return '♞';
 	}
 	@Override
-	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW) {
+	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW,Figur[][] brett) {
 		// check if knight movement is possible
 		if(newX==prevX+2 && newY==prevY+1) {
 			return true;

@@ -4,23 +4,27 @@ public class Spieler {
 
 	Scanner s = new Scanner(System.in);
 	Zug zug;
-	ZugHandler zugHandler = new ZugHandler();
+	ZugHandler zugHandler = new ZugHandler();		
+	int[] input;
 
-	public Figur[][] ziehen(Figur[][] brett) {
+	public int[] ziehen(Figur[][] brett, GUI2D gui) {
 
-	//wiederholen bis möglich
-		while (true){
-			int[] input = turnInput();
-			if(zugHandler.istZugMöglich(input[0], input[1], input[2], input[3], brett,true)) {
+		// wiederholen bis möglich
+
+		while (true) {
+			while(gui.isPlayerTurn) {
+			}
+			input = gui.getClicked();
+			if (zugHandler.istZugMöglich(input[0], input[1], input[2], input[3], brett, true,gui)) {
 				brett = zugHandler.ziehen(input[0], input[1], input[2], input[3], brett);
+				System.out.println("CanDoturn");
 				break;
-			}else{
+			} else {
+				gui.isPlayerTurn = true;
 				System.out.println("Zug nicht möglich");
 			}
-			
 		}
-		return brett;
-
+		return input;
 
 	}
 

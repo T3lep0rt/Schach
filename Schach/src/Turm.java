@@ -6,13 +6,13 @@ public class Turm extends Figur {
 
 	public char getUni() {
 		if (isW) {
-			return 't';
+			return '♖';
 		}
-		return 'T';
+		return '♜';
 	}
 
 	@Override
-	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW) {
+	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW,Figur[][] brett) {
 		// check if turm movement is possible
 		if (newX == prevX && newY > prevY) {
 			return true;

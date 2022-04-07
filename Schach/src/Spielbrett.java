@@ -1,9 +1,9 @@
 public class Spielbrett {
 
 	Figur[][] brett = new Figur[8][8];
-	GUIKonsole guiHandler = new GUIKonsole();
+	GUI2D gui2d = new GUI2D();
 
-	public void Init() {
+	public Figur[][] Init() {
 		// TODO Auto-generated method stub
 
 		Figur wLTurm = new Turm(false);
@@ -13,9 +13,9 @@ public class Spielbrett {
 		Figur wLLaufer = new Laufer(false);
 		brett[2][0] = wLLaufer;
 		Figur wDame = new Dame(false);
-		brett[3][0] = wDame;
+		brett[4][0] = wDame;
 		Figur wKonig = new Konig(false);
-		brett[4][0] = wKonig;
+		brett[3][0] = wKonig;
 		Figur wRLaufer = new Laufer(false);
 		brett[5][0] = wRLaufer;
 		Figur wRSpringer = new Springer(false);
@@ -35,9 +35,9 @@ public class Spielbrett {
 		Figur bLLaufer = new Laufer(true);
 		brett[2][7] = bLLaufer;
 		Figur bDame = new Dame(true);
-		brett[3][7] = bDame;
+		brett[4][7] = bDame;
 		Figur bKonig = new Konig(true);
-		brett[4][7] = bKonig;
+		brett[3][7] = bKonig;
 		Figur bRLaufer = new Laufer(true);
 		brett[5][7] = bRLaufer;
 		Figur bRSpringer = new Springer(true);
@@ -49,16 +49,16 @@ public class Spielbrett {
 			brett[i][6] = new Bauer(true);
 		}
 
-		guiHandler.Draw(brett);
+		return brett;
 
 	}
 	//return brett
 	public Figur[][] getBrett() {
 		return brett;
 	}
-	public void update(Figur[][] ziehen) {
+	public void update(int[] moves) {
 		// update the board to the new arrangement
-		guiHandler.Draw(brett);
+		gui2d.ziehe(moves);;
 	}
     public boolean isSchach() {
         // search brett for 1 black and 1 white king
@@ -69,7 +69,10 @@ public class Spielbrett {
 
 		for(int i = 0; i < brett.length; i++) {
 			for(int j = 0; j < brett[i].length; j++) {
-				if(brett[i][j] != null && brett[i][j].getUni() == 'K' ||brett[i][j] != null && brett[i][j].getUni() == 'k') {
+				//check if the current position is a king
+
+
+				if(brett[i][j] != null && brett[i][j]instanceof Konig) {
 					kingsLeft++;
 				}
 			}

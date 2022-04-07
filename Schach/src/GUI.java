@@ -1,9 +1,9 @@
 public interface GUI {
 
 
-	public void initialize();
+	public void initialize (Figur[][] brett);
 	
-	public void ziehe();
+	public void ziehe(int[] fields);
 	
 	
 }

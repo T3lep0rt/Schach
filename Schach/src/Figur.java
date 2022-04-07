@@ -20,7 +20,7 @@ public class Figur {
 	public boolean getisW() {
 		return isW;
 	}
-	public boolean test(int prevX, int prevY,int newX,int newY,boolean isW) {
+	public boolean test(int prevX, int prevY,int newX,int newY,boolean isW,Figur[][] brett) {
 		return false;
 	}
 	

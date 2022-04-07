@@ -6,14 +6,14 @@ public class Laufer extends Figur{
 	
 	public char getUni() {
 		if(isW) {
-			return 'l';
+			return '♗';
 		}
-		return 'L';
+		return '♝';
 	}
 	@Override
-	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW) {
+	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW,Figur[][] brett) {
 		// check if bishop movement is possible 
-		if(Math.abs(newY-prevX) == Math.abs(newY-prevY)) {
+		if(Math.abs(newX-prevX) == Math.abs(newY-prevY)) {
 			return true;
 		}else{
 			return false;

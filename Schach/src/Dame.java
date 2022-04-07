@@ -7,17 +7,17 @@ public class Dame extends Figur {
 	
 	public char getUni() {
 		if(isW) {
-			return 'd';
+			return '♔';
 		}
-		return 'D';
+		return '♚';
 	}
 
 
 
 	@Override
-	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW) {
+	public boolean test(int prevX, int prevY, int newX, int newY, boolean isW,Figur[][] brett) {
 		// check if queen movement is possible
-		if(Math.abs(newY-prevX) == Math.abs(newY-prevY)) {
+		if(Math.abs(newX-prevX) == Math.abs(newY-prevY)) {
 			return true;
 		}else if (newX == prevX && newY > prevY) {
 			return true;
