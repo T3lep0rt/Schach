@@ -57,6 +57,7 @@ public class Spielbrett {
 		return brett;
 	}
 	public void update(Figur[][] ziehen) {
+		// update the board to the new arrangement
 		guiHandler.Draw(brett);
 	}
     public boolean isSchach() {

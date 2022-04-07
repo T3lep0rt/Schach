@@ -1,5 +1,9 @@
 public interface GUI {
 
-	public void Draw(Figur[][] brett);
+
+	public void initialize();
+	
+	public void ziehe();
+	
 	
 }

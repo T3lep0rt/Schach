@@ -1,7 +1,10 @@
 public class GUIKonsole implements GUI{
 
+	GUI2D gui2d = new GUI2D();
+	
 	public void Draw(Figur[][] brett) {
 		// TODO Auto-generated method stub
+		
 		for (int i = 0; i <= 7; i++) {
 			System.out.println();
 			System.out.print(i + 1 + "   ");
@@ -17,6 +20,18 @@ public class GUIKonsole implements GUI{
 		System.out.println("");
 		System.out.println("");
 		System.out.println("    a  b  c  d  e  f  g  h");
+	}
+
+	@Override
+	public void initialize() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void ziehe() {
+		// TODO Auto-generated method stub
+		
 	}
 
 

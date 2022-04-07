@@ -17,6 +17,9 @@ public class Spiel  {
 	public void Start() {
 		// TODO Auto-generated method stub
 		//Spiel starten und laufen lassen bis einer gewinnt
+		GUI2D gui = new GUI2D();
+		gui.initialize();
+		
 		while(!schach){
 			spielbrett.update(P1.ziehen(spielbrett.getBrett())); // system.in dann controller.class prüfen ob move true ist
 			schach = spielbrett.isSchach();  //überprüfe auf schach

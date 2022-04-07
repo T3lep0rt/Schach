@@ -33,6 +33,7 @@ public class ZugHandler {
 		}else 
 		//Wenn eine übergebener zug nich im Spielfeld ist	
 		if((prevX > 7 || prevX <0) || (prevY > 7|| prevY <0) || (newX > 7|| newX <0)|| (newY > 7|| newY < 0) ) {
+			System.out.println("Bitte nur Felder im spielfeld auswählen ");
 			return false;
 		}
 		Figur pawn = brett[prevX][prevY]; 
