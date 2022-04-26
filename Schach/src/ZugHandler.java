@@ -40,6 +40,11 @@ public class ZugHandler {
 		return brett;
 
 	}
+	
+	public boolean FigurImWeg() {
+		//wenn nicht springer dann geht nicht wenn field mit figur gecrosst wird die nicht das ziel ist
+		return false;
+	}
 
 	public boolean istZugMöglich(int prevX, int prevY, int newX, int newY, Figur[][] brett, boolean isWhitePlayer,
 			GUI2D gui) {
