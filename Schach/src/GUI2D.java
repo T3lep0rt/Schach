@@ -24,6 +24,7 @@ public class GUI2D extends JFrame implements ActionListener, GUI {
 	static ArrayList<Zug> zuege = new ArrayList<Zug>();
 	static JTextArea zugHistory;
 	static Figur[][] spielBrett;
+	char[] labelTop = new char[] {'A','B','C','D','E','F','G','H'};
 
 	@Override
 	public void initialize(Figur[][] brett) {
@@ -31,7 +32,7 @@ public class GUI2D extends JFrame implements ActionListener, GUI {
 		spielBrett = brett;
 		frame.setTitle("Schach von Sandro!");
 		frame.setIconImage(img.getImage());
-		frame.setSize(605, 488);
+		frame.setSize(625, 510);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
@@ -42,11 +43,13 @@ public class GUI2D extends JFrame implements ActionListener, GUI {
 		// sonst layout weird und verbuggt
 		frame.setLayout(null);
 		// init label
-		JLabel lblNewLabel = new JLabel("    A        B       C        D        E        F        G        H");
-		lblNewLabel.setFont(new Font("Meiryo", Font.PLAIN, 16));
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setBounds(50, 25, 449, 14);
-		frame.add(lblNewLabel);
+		for (int i = 0; i < 8; i++) {
+			JLabel lblNewLabel_1 = new JLabel(Character.toString(labelTop[i]));
+			lblNewLabel_1.setFont(new Font("Meiryo", Font.PLAIN, 16));
+			lblNewLabel_1.setForeground(Color.WHITE);
+			lblNewLabel_1.setBounds(70 + i * 50,25, 50, 14);
+			frame.add(lblNewLabel_1);
+		}
 
 		// init label vertical
 		for (int i = 0; i < 8; i++) {
@@ -108,11 +111,13 @@ public class GUI2D extends JFrame implements ActionListener, GUI {
 
 	}
 
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {	
+		//highlight fields the player can move to
 		if (e.getSource().getClass() == JButton.class && isPlayerTurn) {
 			JButton clickedButton = (JButton) e.getSource();
 			if (count == 2) {
 				count = 1;
+				//count is count of fields clicked
 				newX = (clickedButton.getX() - 50) / 50;
 				newY = (clickedButton.getY() - 50) / 50;
 				System.out.println("newX: " + newX + " newY: " + newY);
